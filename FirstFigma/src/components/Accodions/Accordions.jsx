@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
-
-const Accordion = () => {
+const Accordions = () => {
   const [openIndex, setOpenIndex] = useState(1);
 
   const handleToggle = (index) => {
@@ -242,7 +241,7 @@ const Accordion = () => {
         </h2>
 
         <div className="flex justify-center items-center mt-8 mb-2">
-          <div className="btn3 pl-7">
+          <div className="btn">
             Contact Us
           </div>
         </div>
@@ -251,4 +250,4 @@ const Accordion = () => {
   );
 };
 
-export default Accordion;
+export default Accordions;

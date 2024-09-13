@@ -6,7 +6,7 @@
     margin: 0 10px;
   }
 
-  .slick-prev {
+.slick-prev {
     background: transparent;
     border: none;
     border-radius: 50%;
@@ -50,6 +50,18 @@
   .arrow {
     cursor: pointer;
   }
-  
 
-  
+.btn {
+    @apply bg-[#2B53D6] font-semibold rounded-3xl w-[260px]  py-3 text-white
+  }
+
+
+
+
+.btn2 {
+  @apply bg-[#0A2C52] font-semibold rounded-3xl w-[260px]  py-3 text-white
+}
+
+.btn3 {
+  @apply bg-[#2B53D6] font-semibold rounded-3xl w-[140px] py-3 text-white
+}

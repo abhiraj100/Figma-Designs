@@ -1,58 +1,135 @@
 import React from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { useRef } from "react";
+import { MdKeyboardArrowLeft } from "react-icons/md";
+import { MdKeyboardArrowRight } from "react-icons/md";
+
+const data = [
+  {
+    name: "Abhishek Kumar",
+    video: `/Nature.mp4`,
+    title: "Carey Finn",
+  },
+  {
+    name: `Rahul Kumar`,
+    video: `/images/02.jpg`,
+    title: "John Wick",
+  },
+  {
+    name: `Anshu Kumar`,
+    video: `/images/03.jpg`,
+    title: "Spider Man",
+  },
+  {
+    name: "Raj Kumar",
+    video: `/images/04.jpg`,
+    title: "Thor",
+  },
+  {
+    name: `Rajesh Kumar`,
+    video: `/images/05.jpg`,
+    title: "Mr Bean",
+  },
+  {
+    name: `Shyamam Kumar`,
+    video: `/images/06.jpg`,
+    title: "Jack Roser",
+  },
+  {
+    name: `Ranvijay Kumar`,
+    video: `/images/07.jpg`,
+    title: "Mr Bhem",
+  },
+];
 
 const Details = () => {
+  const sliderRef = useRef(null);
+
+  const handlePrevClick = () => {
+    sliderRef.current.slickPrev();
+  };
+
+  const handleNextClick = () => {
+    sliderRef.current.slickNext();
+  };
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    // prevArrow: <PrevArrow />,
+    // nextArrow: <NextArrow />,
+    arrows: false,
+  };
+
   return (
-    <div className="container mx-auto">
-      <div>
-        <div className="justify-center items-center  ">
-          <img className="w-full" src="cta.png" />
-        </div>
-      </div>
-
-      <div>
-        <div>
-          <h1 className="text-black text-center  items-center font-bold mt-[40px] text-4xl">
-            Frequently Asked Questions
+    <>
+      <div className="container mx-auto mt-24 ">
+        <div className="flex flex-col  items-center ">
+          <h1 className=" font-semibold text-[40px] text-[#12171B] items-center mt-6">
+            What People are Saying about Us?
           </h1>
-          <div className="mt-10 pl-[200px]">
-            <h2 className="text-left text-black font-bold text-2xl">
-              Why was Kai-Zen® Developed?
-            </h2>
-            <p className="mt-3 text-left text-black  text-1xl">
-              Research tells us that 74% of how much you receive in retirement
-              is based on how much cash (capital) you have set aside, and only
-              26% is a result of investment return. Put another way, the
-              retirement concern is not about how your investments are doing, it
-              is not having enough money to invest. This underfunding for
-              retirement income is the issue Kai-Zen® is helping to resolve and
-              Kai-Zen® is currently the only plan on the market where you can
-              obtain leverage to this degree, without having to qualify for the
-              loan and make interest payments.
-            </p>
-          </div>
-          <h2 className="mt-11 pl-[200px] text-left text-black font-bold text-2xl">
-            What are the Qualification Requirements?
-          </h2>
-          <h2 className="mt-11 pl-[200px] text-left text-black font-bold text-2xl">
-            It Sounds Too Good to be True. What's the Catch?
-          </h2>
-          <h2 className="mt-11 pl-[200px] text-left text-black font-bold text-2xl">
-            How Kai-Zen® works ?
-          </h2>
+          <p className="w-[480px] text-[18px] text-center text-[#3A3939] items-center mt-4 ">
+            Hear from real customers how Kai-Zen has helped secure their
+            financial future.
+          </p>
         </div>
 
-        <h2 className="text-black text-center items-center font-bold mt-[40px] text-4xl">
-          Still have Any Questions ?
-        </h2>
+        {/* video section */}
 
-        <div className="flex justify-center items-center mt-8 mb-16">
-          <div className="bg-blue-600 pt-2 text-white text-center text-2xl h-[50px] w-[150px] rounded-3xl">
-            Contact Us
+        <div className="container mx-auto rounded-xl mt-2  mb-10  ">
+          <div className="m-auto  ">
+            <div className="mt-20 ">
+              <Slider ref={sliderRef} {...settings}>
+                {data.map((value) => (
+                  <div className="flex flex-col justify-center items-start">
+                    <video
+                      preload="metadata"
+                      loop
+                      autoPlay
+                      controls
+                      muted
+                      className="w-full rounded-lg"
+                    >
+                      <source src="Nature.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+
+                    <div className="flex flex-col rounded-xl mt-4">
+                      <div className="text-[#2B53D6]  text-[14px]">{value.name}</div>
+                      <div className="flex flex-col">
+                        <h1 className="font-semibold text-[20px] text-[#12171B]">{value.title}</h1>
+                        <p className="text-[14px] text-[#3A3939]">Kai-Zen Testimonial</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </Slider>
+
+              <div className="mt-7 mr-2 justify-center items-center gap-x-2 flex flex-row ">
+                <button
+                  className="rounded-[25%] bg-[#D1D9F8] p-2 border text-xl font-bold"
+                  onClick={handlePrevClick}
+                >
+                  {<MdKeyboardArrowLeft /> }
+                </button>
+                
+
+
+                <button
+                  className="rounded-[25%] bg-[#D1D9F8] p-2 border text-xl font-bold"
+                  onClick={handleNextClick}
+                >  {<MdKeyboardArrowRight />}</button>
+              </div>
+            </div>
           </div>
         </div>
-        
       </div>
-    </div>
+    </>
   );
 };
 

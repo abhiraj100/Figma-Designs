@@ -5,10 +5,10 @@ const BenefitsSection = () => {
   return (
     <div className="container mx-auto">
       <div className="mt-200 mb-16">
-        <h1 className="text-center mt-10 font-bold text-4xl">
+        <h1 className="text-center text-[#12171B] mt-10 font-bold text-[40px]">
           Benefits of Kai-Zen®
         </h1>
-        <p className="text-center text-[17px] mx-[350px] ">
+        <p className="text-center text-[#3A3939] text-[18px] mx-[350px] ">
           We have all used leverage to purchase a nicer home, or to buy a better
           car. Kai-Zen® uses leverage for the potential to accumulate cash,
           providing up to 60 - 100% more benefits, than using your money alone.
@@ -18,10 +18,10 @@ const BenefitsSection = () => {
       <BenefitsCard />
 
       {/* button */}
-      <div className=" cursor-pointer mt-4">
-        <div className="bg-blue-600 ml-[420px] text-center justify-center font-sans font-bold text-white w-[260px] h-[55px] rounded-3xl px-3 py-3">
+      <div className="cursor-pointer flex justify-center  items-center mt-4">
+        <button className="btn">
           Learn With FREE Course
-        </div>
+        </button>
       </div>
 
     </div>

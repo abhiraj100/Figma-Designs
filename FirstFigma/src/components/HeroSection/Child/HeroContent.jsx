@@ -5,15 +5,15 @@ import { faCircle } from "@fortawesome/free-solid-svg-icons";
 
 const HeroContent = () => {
   return (
-    <div className="mt-40">
-      <div className="flex justify-between">
-        <div className="pl-20 flex justify-between items-center">
-          <div className="mb-40 flex justify-between">
-            <div className="">
+    <div className=" mx-auto container ">
+      <div className="flex justify-between ">
+        <div className="pr-8 pl-1 pt-4 flex mt-10 justify-between items-center">
+          <div className="p-5 mt-5 flex justify-between">
+            <div className="p-4 w-full">
               <div className="text-left">
                 <p className="mb-0 text-lg">
                   See your potential returns and see if Kai-Zen® is{" "}
-                  <br className="my-0" /> right for you.
+                  right for you.
                 </p>
               </div>{" "}
               <div className="flex text-lg justify-between mt-4">
@@ -29,7 +29,7 @@ const HeroContent = () => {
               </div>
               <div className="w-[100%] h-[5px] mt-3 border-b-2 border-slate-200"></div>
               <div>
-                <h1 className="text-left mb-1 text-[#12171B] font-semibold text-3xl">
+                <h1 className="text-left mb-1 text-[#12171B] font-medium text-3xl">
                   Your Results
                 </h1>
                 <div className="flex justify-between">
